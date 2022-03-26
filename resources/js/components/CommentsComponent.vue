@@ -7,7 +7,7 @@
                     <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item "><router-link to="/"><i class="info-icon icon_book_alt"></i> Books</router-link></li>
-                        <li class="breadcrumb-item  active"  aria-current="page"><i class="info-icon icon_comment_alt"></i> Comments</li>
+                        <li class="breadcrumb-item  active"  aria-current="page"><i class="info-icon icon_comment_alt"></i> Comments in {{ $route.params.name }} </li>
                     </ol>
                     </nav>
                 </div>
@@ -15,14 +15,13 @@
             <div class="container mb-5 p-5">
                 <div class="row d-flex justify-content-center mt-100 mb-100">
                     <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                {{ $route.params.name }}
-                            </div>
-                            <textarea name="" id="" cols="30" rows="10" v-model="comment" maxlength="500" placeholder="Leave a comment" class="form-control"></textarea>
-                            <br>
-                            <button @click="post()" class="btn btn-primary" style="background-color: #000">Post a comment</button>
-                        </div>
+                        <v-card elevation="2" shaped>
+                            <textarea name="" id="" cols="20" rows="10" style="height: 100%" v-model="comment" maxlength="500" placeholder="Leave a comment" class="form-control" required></textarea>
+                           <v-card-actions>
+                               <v-btn style="float:right;color: #fff" color="black" @click="post()">Post a comment</v-btn>
+                           </v-card-actions>
+                            
+                        </v-card>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center mt-100 mb-100">

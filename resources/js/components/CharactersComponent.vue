@@ -2,7 +2,17 @@
 <div>
         <!-- Main Body -->
         <section>
-            <div class="container mt-5 mb-5">
+            <div class="container">
+                <div class="row">
+                    <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item "><router-link to="/"><i class="info-icon icon_book_alt"></i> Books</router-link></li>
+                        <li class="breadcrumb-item  active"  aria-current="page"><i class="info-icon icon_star_alt"></i> Characters in {{ $route.params.book_name }}</li>
+                    </ol>
+                    </nav>
+                </div>
+            </div>
+            <div class="container mb-5">
                 <div class="row">
                     <h4>Sort</h4>
                     <div class="col-6">
@@ -118,11 +128,11 @@
         characters: [],
         count: 0,
         sort: 'Asc',
-        criteria: 'name',
+        criteria: 'Name',
         filter_gender: 'All',
         page: 1,
         opt: {
-            criteria: ['gender','name','age'],
+            criteria: ['Gender','Name','Age'],
             sort: ['Asc','Desc'],
             gender: ['Male','Female','All'],
             pages: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
@@ -139,7 +149,7 @@
                 axios.get('/api/characters', { params: {
                         name: this.$route.params.book_id,
                         sort: this.sort,
-                        criteria: this.criteria,
+                        criteria: this.criteria.toLowerCase(),
                         gender: this.filter_gender,
                         page: this.page,
 

@@ -17,7 +17,7 @@ export const routes = [
     },
     {
         name: 'characters',
-        path: '/characters/:book_id',
+        path: '/characters/:book_id/:book_name',
         component: Characters
     }
 ];
