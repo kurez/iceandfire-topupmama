@@ -24,12 +24,12 @@
                             </div>
                         </div>
                         
-                        <div  style="float: right;margin-left: 5px"></div>
+                        <div  style="float: right;margin-left: 5px"><router-link :to="{ name: 'comments', params: { name: book.name } }"  class="comment-btn" data-toggle="tooltip" data-placement="bottom" title="Comments"> | Comment <i class="info-icon icon_comment_alt"></i></router-link></div>
                         
                         <div  style="float: right;margin-left: 5px"><router-link :to="{ name: 'characters', params: { book_id: getID(book.url) } }"  class="comment-btn" data-toggle="tooltip" data-placement="bottom" title="Characters">Characters <i class="info-icon icon_star_alt"></i></router-link></div>
                         
                         <div  style="padding-right: 5px;color: #aaa" v-for="comment in comments" :key="comment.id">
-                            <span v-if="book.name === comment.book_name"><router-link :to="{ name: 'comments', params: { name: book.name } }"  class="comment-btn" data-toggle="tooltip" data-placement="bottom" title="Comments">{{ comment.count }} Comments <i class="info-icon icon_comment_alt"></i></router-link></span>
+                            <span v-if="book.name === comment.book_name">{{ comment.count }} Comments</span>
                         </div>
                         
                     </div>
