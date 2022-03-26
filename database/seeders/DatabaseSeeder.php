@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Schema::enableForeignKeyConstraints();
-        DB::table('comments')->truncate();
+        // DB::table('comments')->truncate();
         Schema::disableForeignKeyConstraints();
-        \App\Models\Comments::factory(200)->create();
+        // \App\Models\Comments::factory(200)->create();
     }
 }
