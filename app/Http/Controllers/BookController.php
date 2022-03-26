@@ -54,7 +54,8 @@ class BookController extends Controller
             ['book_name' => $request['book'], 
             'client_ip' => $request->ip(),
             'comment' => $request['comment'],
-            'created_at' => date("Y-m-d H:i:s", strtotime('now'))]
+            'created_at' => date("Y-m-d H:i:s", strtotime('now'))
+            ]
         );
 
         // if success

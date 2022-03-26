@@ -82,9 +82,10 @@
         methods: {
             post () {
             this.loading  = true
-                axios.get('/api/comment', { book: this.$route.params.name, comment: this.comment })
+                axios.post('/api/comment', { book: this.$route.params.name, comment: this.comment })
                     .then(response => {
                     // JSON responses are automatically parsed.
+                    console.log(response)
                     this.responsed  = response.data
                     this.loading  = false
                     this.comment = ''
