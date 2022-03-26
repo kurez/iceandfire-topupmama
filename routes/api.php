@@ -17,8 +17,10 @@ use App\Http\Controllers\BookController;
 
 Route::middleware('api')->group(function () {
     Route::get('books', [BookController::class, 'index']);
+
     Route::post('comment', [BookController::class, 'storeComment']); 
     Route::get('comments', [BookController::class, 'showComments']);
     Route::get('get-comments-count', [BookController::class, 'getCommentsCount']);
+    
     Route::get('characters', [BookController::class, 'getCharacters']);
 });

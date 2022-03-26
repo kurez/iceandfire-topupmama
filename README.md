@@ -1,5 +1,3 @@
-
-
 # IceandFire - Topup Mama
 
 A small set of rest API endpoints using Laravel(PHP), Vue.js, MysQL, Bootstrap, JavaScript, and Css that can be used for listing the names of books along with their authors and comment count, adding and listing anonymous comments for a book, and getting the character list for a book with:
@@ -22,19 +20,39 @@ You can check it live [on this website](https://iceandfire-topupmama.herokuapp.c
 
 Notice that data in the comment section is dummy data, for demo purposes.
 
+## API endpoints
+
+These endpoints allow you to handle the fetching of data from api end-points implemented.
+
+
+### Following are the Models
+* Comments
+
+##### Comments
+* Comments POST Create `api/comment`
+* Comments GET Single (Parameters passed via axios to request variable in controller) `api/comments`
+* Comments GET All `api/get-comments-count`
+
+##### Books
+* Books GET All `api/books`
+
+##### Characters
+* Post GET Single (Parameters passed via axios to request variable in controller) `api/characters`
+
+
 ## Main dependencies
 
 Front-end:
 * [Vue](https://github.com/vuejs/vue)
+* [Axios](https://axios-http.com/docs/intro)
 * [VueRouter](https://github.com/vuejs/vue-router)
 * [Bootstrap 4](https://github.com/twbs/bootstrap)
 * [Laravel Echo](https://github.com/laravel/echo)
 * [Laravel Mix](https://github.com/JeffreyWay/laravel-mix)
 
-
 Back-end:
-
 * [Laravel](https://github.com/laravel/laravel)
+* [Guzzle](https://docs.guzzlephp.org/en/stable/)
 * [Laravel Sanctum](https://github.com/laravel/sanctum)
 * [laravel-vue-i18n-generator](https://github.com/alefesouza/laravel-vue-i18n-generator)
 
