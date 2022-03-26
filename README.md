@@ -29,15 +29,20 @@ These endpoints allow you to handle the fetching of data from api end-points imp
 * Comments
 
 ##### Comments
-* Comments POST Create `api/comment (Route::post('comment', [BookController::class, 'storeComment']))`
-* Comments GET Single (Parameters passed via axios to request variable in controller) `api/comments (Route::get('comments', [BookController::class, 'showComments']))`
-* Comments GET All `api/get-comments-count (Route::get('get-comments-count', [BookController::class, 'getCommentsCount'])`
+* Comments POST Create `api/comment`
+` (Route::post('comment', [BookController::class, 'storeComment']))`
+* Comments GET Single (Parameters passed via axios to request variable in controller) `api/comments`
+` (Route::get('comments', [BookController::class, 'showComments']))`
+* Comments GET All `api/get-comments-count`
+` (Route::get('get-comments-count', [BookController::class, 'getCommentsCount'])`
 
 ##### Books
-* Books GET All `api/books (Route::get('books', [BookController::class, 'index']))`
+* Books GET All `api/books`
+`(Route::get('books', [BookController::class, 'index']))`
 
 ##### Characters
-* Post GET Single (Parameters passed via axios to request variable in controller) `api/characters (Route::get('characters', [BookController::class, 'getCharacters']))`
+* Post GET Single (Parameters passed via axios to request variable in controller) `api/characters`
+` (Route::get('characters', [BookController::class, 'getCharacters']))`
 
 
 ## Main dependencies
