@@ -15,6 +15,7 @@ and the UTC date & time they were stored.
 * Character listendpoint also accepts a filter parameter to filter by gender.
 * The response from character list endpoint also returns metadata that contains the total number of
  characters that match the criteria.
+* Deployed to Heroku.
 
 You can check it live [on this website](https://iceandfire-topupmama.herokuapp.com/), no authentication needed.
 
