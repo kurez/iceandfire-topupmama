@@ -12,7 +12,7 @@
                     </nav>
                 </div>
             </div>
-            <div class="container mt-5 mb-5 p-5">
+            <div class="container mb-5 p-5">
                 <div class="row d-flex justify-content-center mt-100 mb-100">
                     <div class="col-lg-8">
                         <div class="card">
