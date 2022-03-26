@@ -87,6 +87,7 @@
                     console.log(response)
                     this.responsed  = response.data
                     this.loading  = false
+                    this.$router.go(this.$router.currentRoute)      
                     this.comment = ''
                     })
                     .catch(e => {

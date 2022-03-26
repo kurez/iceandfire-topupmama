@@ -140,7 +140,6 @@
       }
     },
     mounted() {
-        this.loading  = true
         this.sortChar();
     },
     methods: {
