@@ -1,64 +1,67 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+# IceandFire - Topup Mama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A small set of rest API endpoints using Laravel(PHP), Vue.js, MysQL, Bootstrap, JavaScript, and Css that can be used for listing the names of books along with their authors and comment count, adding and listing anonymous comments for a book, and getting the character list for a book with:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* Display of movies movie data, fetched online from https://anapioficeandfire.com/.
+* Book names in the book list endpoint are sorted by release date from earliest to newest 
+and each book should be listed along with authors and count of comments.
+* Comments are stored in a SQL database.
+* The comment list is retrieved in reverse chronological order.
+* Comments are retrieved along with the public IP address of the commenter.
+and the UTC date & time they were stored.
+* Comment length is limited to 500 characters.
+* Error responses returned in case of errors.
+* Character list endpoint accepts sort parameters to sort by one of name, gender, or age in ascending or descending order.
+* Character listendpoint also accepts a filter parameter to filter by gender.
+* The response from character list endpoint also returns metadata that contains the total number of
+ characters that match the criteria.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+You can check it live [on this website](https://iceandfire-topupmama.herokuapp.com/), no authentication needed.
 
-## Learning Laravel
+Notice that data in the comment section is dummy data, for demo purposes.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Main dependencies
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Front-end:
+* [Vue](https://github.com/vuejs/vue)
+* [VueRouter](https://github.com/vuejs/vue-router)
+* [Bootstrap 4](https://github.com/twbs/bootstrap)
+* [Laravel Echo](https://github.com/laravel/echo)
+* [Laravel Mix](https://github.com/JeffreyWay/laravel-mix)
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Back-end:
 
-### Premium Partners
+* [Laravel](https://github.com/laravel/laravel)
+* [Laravel Sanctum](https://github.com/laravel/sanctum)
+* [laravel-vue-i18n-generator](https://github.com/alefesouza/laravel-vue-i18n-generator)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
+## Steps to run it:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Common way (NPM)
 
-## Code of Conduct
+Rename the .env.example file to .env, and fill it with your local info, then:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Install PHP and JavaScript dependencies:
 
-## Security Vulnerabilities
+    composer install
+    npm install
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Generate Laravel keys:
 
-## License
+    php artisan key:generate
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Migrate and seed the database:
+
+    php artisan migrate --seed
+
+Compile all the front-end stuff for development:
+
+    npm run watch (For development)
+
+Compile all the front-end stuff for development:
+
+    npm run production (For production)
